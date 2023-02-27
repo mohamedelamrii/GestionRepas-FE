@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Role {\n  constructor() {\n    this.authority = \"ROLE_ANONYMOUS\";\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

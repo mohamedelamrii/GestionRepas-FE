@@ -1,0 +1,194 @@
+{
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des responsable plannings': 'Liste des responsable plannings',
+    'Chercher...': 'Chercher...',
+    'Responsable planning': 'Responsable planning',
+
+
+        'Id': 'Id',
+            'Nom': 'Nom',
+
+        'Nom': 'Nom',
+            'Prenom': 'Prenom',
+
+        'Prenom': 'Prenom',
+            'Cin': 'Cin',
+
+        'Cin': 'Cin',
+            'Code': 'Code',
+
+        'Code': 'Code',
+            'Email': 'Email',
+
+        'Email': 'Email',
+            'Adresse': 'Adresse',
+
+        'Adresse': 'Adresse',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des repas categorie patients': 'Liste des repas categorie patients',
+    'Chercher...': 'Chercher...',
+    'Repas categorie patient': 'Repas categorie patient',
+
+
+        'Id': 'Id',
+            'Repas': 'Repas',
+
+        'Repas': 'Repas',
+            'Categorie patient': 'Categorie patient',
+
+        'Categorie patient': 'Categorie patient',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des planning repas': 'Liste des planning repas',
+    'Chercher...': 'Chercher...',
+    'Planning repas': 'Planning repas',
+
+
+        'Id': 'Id',
+            'Planning': 'Planning',
+
+        'Planning': 'Planning',
+            'Repas': 'Repas',
+
+        'Repas': 'Repas',
+            'Type repas': 'Type repas',
+
+        'Type repas': 'Type repas',
+            'Quantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'Description': 'Description',
+
+        'Description': 'Description',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des repas': 'Liste des repas',
+    'Chercher...': 'Chercher...',
+    'Repas': 'Repas',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Type repas': 'Type repas',
+
+        'Type repas': 'Type repas',
+            'Image': 'Image',
+
+        'Image': 'Image',
+            'Description': 'Description',
+
+        'Description': 'Description',
+            'Repas categorie patients': 'Repas categorie patients',
+
+        'Repas categorie patients': 'Repas categorie patients',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des type repas': 'Liste des type repas',
+    'Chercher...': 'Chercher...',
+    'Type repas': 'Type repas',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Code': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des jours': 'Liste des jours',
+    'Chercher...': 'Chercher...',
+    'Jour': 'Jour',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Code': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des patients': 'Liste des patients',
+    'Chercher...': 'Chercher...',
+    'Patient': 'Patient',
+
+
+        'Id': 'Id',
+            'Ipp': 'Ipp',
+
+        'Ipp': 'Ipp',
+            'Nom': 'Nom',
+
+        'Nom': 'Nom',
+            'Prenom': 'Prenom',
+
+        'Prenom': 'Prenom',
+            'Cin': 'Cin',
+
+        'Cin': 'Cin',
+            'Code ramed': 'Code ramed',
+
+        'Code ramed': 'Code ramed',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des planning executions': 'Liste des planning executions',
+    'Chercher...': 'Chercher...',
+    'Planning execution': 'Planning execution',
+
+
+        'Id': 'Id',
+            'Date planning execution': 'Date planning execution',
+
+        'Date planning execution': 'Date planning execution',
+            'Quantite execution': 'Quantite execution',
+
+        'Quantite execution': 'Quantite execution',
+            'Planning repas': 'Planning repas',
+
+        'Planning repas': 'Planning repas',
+            'Commentaire': 'Commentaire',
+
+        'Commentaire': 'Commentaire',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des plannings': 'Liste des plannings',
+    'Chercher...': 'Chercher...',
+    'Planning': 'Planning',
+
+
+        'Id': 'Id',
+            'Date debut': 'Date debut',
+
+        'Date debut': 'Date debut',
+            'Date fin': 'Date fin',
+
+        'Date fin': 'Date fin',
+            'Categorie patient': 'Categorie patient',
+
+        'Categorie patient': 'Categorie patient',
+            'Jour': 'Jour',
+
+        'Jour': 'Jour',
+            'Planning repass': 'Planning repass',
+
+        'Planning repass': 'Planning repass',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'Liste des categorie patients': 'Liste des categorie patients',
+    'Chercher...': 'Chercher...',
+    'Categorie patient': 'Categorie patient',
+
+
+        'Id': 'Id',
+            'Libelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'Code': 'Code',
+
+        'Code': 'Code',
+            'Nombre patient total': 'Nombre patient total',
+
+        'Nombre patient total': 'Nombre patient total',
+            'Description': 'Description',
+
+        'Description': 'Description',
+}
+
+

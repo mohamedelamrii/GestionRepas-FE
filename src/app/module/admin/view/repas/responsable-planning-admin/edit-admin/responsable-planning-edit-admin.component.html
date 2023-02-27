@@ -1,0 +1,98 @@
+        <p-dialog [(visible)]="editResponsablePlanningDialog" [style]="{width: '70vw'}"
+                header="Responsable planning" [modal]="true"
+                styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+
+
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="Responsable planning">
+                        <div class="p-grid">
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="1">Nom<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Nom"
+                                                   id="1" [(ngModel)]="selectedResponsablePlanning.nom"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validResponsablePlanningNom}"  />
+                                            <small class='p-error' *ngIf='!validResponsablePlanningNom'>Nom est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="2">Prenom<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Prenom"
+                                                   id="2" [(ngModel)]="selectedResponsablePlanning.prenom"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validResponsablePlanningPrenom}"  />
+                                            <small class='p-error' *ngIf='!validResponsablePlanningPrenom'>Prenom est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="3">Cin<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Cin"
+                                                   id="3" [(ngModel)]="selectedResponsablePlanning.cin"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validResponsablePlanningCin}"  />
+                                            <small class='p-error' *ngIf='!validResponsablePlanningCin'>Cin est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="4">Code<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Code"
+                                                   id="4" [(ngModel)]="selectedResponsablePlanning.code"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validResponsablePlanningCode}"  />
+                                            <small class='p-error' *ngIf='!validResponsablePlanningCode'>Code est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="5">Email<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Email"
+                                                   id="5" [(ngModel)]="selectedResponsablePlanning.email"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validResponsablePlanningEmail}"  />
+                                            <small class='p-error' *ngIf='!validResponsablePlanningEmail'>Email est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="6">Adresse</label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Adresse"
+                                                   id="6" [(ngModel)]="selectedResponsablePlanning.adresse"
+                                                     />
+                                            
+                                        </div>
+
+
+
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-grid">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times"
+                                    class="p-button-text" (click)="hideEditDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="edit()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+
+
+    </p-dialog>

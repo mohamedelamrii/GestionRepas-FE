@@ -1,0 +1,87 @@
+        <p-dialog [(visible)]="editPatientDialog" [style]="{width: '70vw'}"
+                header="Patient" [modal]="true"
+                styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+
+
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="Patient">
+                        <div class="p-grid">
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="1">Ipp<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Ipp"
+                                                   id="1" [(ngModel)]="selectedPatient.ipp"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validPatientIpp}"  />
+                                            <small class='p-error' *ngIf='!validPatientIpp'>Ipp est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="2">Nom<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Nom"
+                                                   id="2" [(ngModel)]="selectedPatient.nom"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validPatientNom}"  />
+                                            <small class='p-error' *ngIf='!validPatientNom'>Nom est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="3">Prenom<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Prenom"
+                                                   id="3" [(ngModel)]="selectedPatient.prenom"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validPatientPrenom}"  />
+                                            <small class='p-error' *ngIf='!validPatientPrenom'>Prenom est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="4">Cin<span style="color: red;">*</span></label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Cin"
+                                                   id="4" [(ngModel)]="selectedPatient.cin"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validPatientCin}"  />
+                                            <small class='p-error' *ngIf='!validPatientCin'>Cin est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="5">Code ramed</label>
+                                            <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                   placeholder="Code ramed"
+                                                   id="5" [(ngModel)]="selectedPatient.codeRamed"
+                                                     />
+                                            
+                                        </div>
+
+
+
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-grid">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times"
+                                    class="p-button-text" (click)="hideEditDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="edit()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+
+
+    </p-dialog>

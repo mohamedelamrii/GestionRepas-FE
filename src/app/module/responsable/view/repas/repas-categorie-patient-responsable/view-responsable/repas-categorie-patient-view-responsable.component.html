@@ -1,0 +1,54 @@
+
+<p-dialog [(visible)]="viewRepasCategoriePatientDialog" [style]="{width: '70vw'}"
+        header="" [modal]="true"
+        styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="p-grid">
+
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="1">Repas</label>
+                                    <p-dropdown [options]="repass" [(ngModel)]="selectedRepasCategoriePatient.repas"
+                                            id="1" [filter]="true" filterMatchMode="contains"
+                                            [showClear]="true" [disabled]="true"
+                                            optionLabel="libelle"
+                                            placeholder="Repas">
+                                    </p-dropdown>
+                                </div>
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="2">Categorie patient</label>
+                                    <p-dropdown [options]="categoriePatients" [(ngModel)]="selectedRepasCategoriePatient.categoriePatient"
+                                            id="2" [filter]="true" filterMatchMode="contains"
+                                            [showClear]="true" [disabled]="true"
+                                            optionLabel="libelle"
+                                            placeholder="Categorie patient">
+                                    </p-dropdown>
+                                </div>
+                </div>
+            </p-tabPanel>
+
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="p-grid">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times"
+                        class="p-button-text" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+
+            <app-repas-create-responsable></app-repas-create-responsable>
+            <app-categorie-patient-create-responsable></app-categorie-patient-create-responsable>
+
+
+
+</p-dialog>
+
+
+

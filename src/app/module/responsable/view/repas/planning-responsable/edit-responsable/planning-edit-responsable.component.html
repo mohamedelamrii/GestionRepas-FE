@@ -1,0 +1,182 @@
+        <p-dialog [(visible)]="editPlanningDialog" [style]="{width: '70vw'}"
+                header="Planning" [modal]="true"
+                styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+
+
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="Planning">
+                        <div class="p-grid">
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="1">Date debut<span style="color: red;">*</span></label>
+                                            <p-calendar id="1"   [showTime]="true" [showSeconds]="false"
+                                                        placeholder="Date debut"  [(ngModel)]="selectedPlanning.dateDebut"
+                                                    dateFormat="{{dateFormat}}" [ngClass]="{'ng-invalid ng-dirty' : !validPlanningDateDebut}"  >
+                                            </p-calendar>
+                                            <small class='p-error' *ngIf='!validPlanningDateDebut'>DateDebut est obligatoire.</small>
+                                        </div>
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="2">Date fin<span style="color: red;">*</span></label>
+                                            <p-calendar id="2"   [showTime]="true" [showSeconds]="false"
+                                                        placeholder="Date fin"  [(ngModel)]="selectedPlanning.dateFin"
+                                                    dateFormat="{{dateFormat}}" [ngClass]="{'ng-invalid ng-dirty' : !validPlanningDateFin}"  >
+                                            </p-calendar>
+                                            <small class='p-error' *ngIf='!validPlanningDateFin'>DateFin est obligatoire.</small>
+                                        </div>
+
+                                        <div class="p-field p-col-11 p-md-5">
+                                            <label for="3">Categorie patient<span style="color: red;">*</span></label>
+                                            <p-dropdown [options]="categoriePatients" [(ngModel)]="selectedPlanning.categoriePatient"
+                                                    id="3" [filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true"
+                                                    optionLabel="libelle"
+                                                    placeholder="Categorie patient" [ngClass]="{'ng-invalid ng-dirty' : !validPlanningCategoriePatient}"  >
+                                            </p-dropdown>
+                                            <small class='p-error' *ngIf='!validPlanningCategoriePatient'>CategoriePatient est obligatoire.</small>
+                                        </div>
+                                        <div class="p-col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button"
+                                                    icon="pi pi-plus"   (click)="openCreatecategoriePatient('categoriePatient')"
+                                                    class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                                        <div class="p-field p-col-11 p-md-5">
+                                            <label for="4">Jour</label>
+                                            <p-dropdown [options]="jours" [(ngModel)]="selectedPlanning.jour"
+                                                    id="4" [filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true"
+                                                    optionLabel="libelle"
+                                                    placeholder="Jour"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="p-col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button"
+                                                    icon="pi pi-plus"   (click)="openCreatejour('jour')"
+                                                    class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                        </div>
+                    </p-tabPanel>
+                            <p-tabPanel header="Planning repass">
+                                <p-tabView>
+                                    <p-tabPanel header="Création">
+                                        <div class="p-grid">
+                                                            <div class="p-field p-col-11 p-md-3">
+                                                                <label>Repas</label>
+                                                                <p-dropdown [options]="repass" [(ngModel)]="selectedPlanningRepass.repas"
+                                                                        id="2"  [filter]="true"
+                                                                        filterMatchMode="contains" [showClear]="true"
+                                                                        optionLabel="libelle"
+                                                                        placeholder="Repas"  
+                                                                >
+                                                                </p-dropdown>
+                                                                
+                                                            </div>
+                                                            <div class="p-col-1">
+                                                                <label></label>
+                                                                <button pButton pRipple type="button"
+                                                                        icon="pi pi-plus"   (click)="openCreaterepas('repas')"
+                                                                        class="p-button-success one-colonne-btn-success-align"></button>
+                                                            </div>
+
+                                                            <div class="p-field p-col-11 p-md-3">
+                                                                <label>Type repas</label>
+                                                                <p-dropdown [options]="typeRepass" [(ngModel)]="selectedPlanningRepass.typeRepas"
+                                                                        id="3"  [filter]="true"
+                                                                        filterMatchMode="contains" [showClear]="true"
+                                                                        optionLabel="libelle"
+                                                                        placeholder="Type repas"  
+                                                                >
+                                                                </p-dropdown>
+                                                                
+                                                            </div>
+                                                            <div class="p-col-1">
+                                                                <label></label>
+                                                                <button pButton pRipple type="button"
+                                                                        icon="pi pi-plus"   (click)="openCreatetypeRepas('typeRepas')"
+                                                                        class="p-button-success one-colonne-btn-success-align"></button>
+                                                            </div>
+
+                                                            <div class="p-field p-col-12 p-md-4">
+                                                                <label for="4">Quantite<span style="color: red;">*</span></label>
+                                                                <p-inputNumber class="p-mb-2 p-mr-2" id="quantite"
+                                                                               placeholder="Quantite"  [ngClass]="{'ng-invalid ng-dirty' : !validPlanningRepassQuantite}" 
+                                                                        [(ngModel)]="selectedPlanningRepass.quantite"></p-inputNumber>
+                                                                <small class='p-error' *ngIf='!validPlanningRepassQuantite'>Quantite est obligatoire.</small>
+                                                            </div>
+                                                            <div class="p-field p-col-12 p-md-4">
+                                                                <label for="5">Description</label>
+                                                                <input class="p-mb-2 p-mr-2" type="text" pInputText
+                                                                       placeholder="Description"
+                                                                       id="5" [(ngModel)]="selectedPlanningRepass.description"
+                                                                       autofocus   >
+                                                                
+                                                            </div>
+                                                <div class="p-field p-col-12 p-md-1">
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" class="p-mt-4"
+                                                            label="OK" (click)="addPlanningRepass()">
+                                                    </button>
+                                                </div>
+                                        </div>
+                                    </p-tabPanel>
+                                    <p-tabPanel header="Liste">
+                                            <div class="card">
+                                                <p-table [value]="selectedPlanning.planningRepass" [scrollable]="true"
+                                                        scrollHeight="200px">
+                                                    <ng-template pTemplate="header">
+                                                        <tr>
+                                                                        <th>Repas</th>
+                                                                        <th>Type repas</th>
+                                                                        <th>Quantite</th>
+                                                                        <th>Description</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </ng-template>
+                                                    <ng-template pTemplate="body" let-p>
+                                                        <tr>
+                                                                    <td>{{p.repas?.libelle}}</td>
+                                                                    <td>{{p.typeRepas?.libelle}}</td>
+                                                                        <td>{{p.quantite}}</td>
+
+                                                                        <td>{{p.description}}</td>
+
+                                                            <td>
+                                                                <button (click)="deletePlanningRepass(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger">
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </ng-template>
+                                                </p-table>
+                                            </div>
+
+                                    </p-tabPanel>
+                                </p-tabView>
+                            </p-tabPanel>
+
+
+                </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-grid">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times"
+                                    class="p-button-text" (click)="hideEditDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="edit()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+                    <app-categorie-patient-create-responsable></app-categorie-patient-create-responsable>
+                    <app-jour-create-responsable></app-jour-create-responsable>
+
+                            <app-repas-create-responsable></app-repas-create-responsable>
+                            <app-type-repas-create-responsable></app-type-repas-create-responsable>
+
+    </p-dialog>

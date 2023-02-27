@@ -1,0 +1,100 @@
+        <p-dialog [(visible)]="editPlanningRepasDialog" [style]="{width: '70vw'}"
+                header="Planning repas" [modal]="true"
+                styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+
+
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="Planning repas">
+                        <div class="p-grid">
+
+                                        <div class="p-field p-col-11 p-md-5">
+                                            <label for="1">Planning</label>
+                                            <p-dropdown [options]="plannings" [(ngModel)]="selectedPlanningRepas.planning"
+                                                    id="1" [filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true"
+                                                    optionLabel="id"
+                                                    placeholder="Planning"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="p-col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button"
+                                                    icon="pi pi-plus"   (click)="openCreateplanning('planning')"
+                                                    class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                                        <div class="p-field p-col-11 p-md-5">
+                                            <label for="2">Repas</label>
+                                            <p-dropdown [options]="repass" [(ngModel)]="selectedPlanningRepas.repas"
+                                                    id="2" [filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true"
+                                                    optionLabel="libelle"
+                                                    placeholder="Repas"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="p-col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button"
+                                                    icon="pi pi-plus"   (click)="openCreaterepas('repas')"
+                                                    class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                                        <div class="p-field p-col-11 p-md-5">
+                                            <label for="3">Type repas</label>
+                                            <p-dropdown [options]="typeRepass" [(ngModel)]="selectedPlanningRepas.typeRepas"
+                                                    id="3" [filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true"
+                                                    optionLabel="libelle"
+                                                    placeholder="Type repas"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="p-col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button"
+                                                    icon="pi pi-plus"   (click)="openCreatetypeRepas('typeRepas')"
+                                                    class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="4">Quantite<span style="color: red;">*</span></label>
+                                            <p-inputNumber class="p-mb-2 p-mr-2" id="4"
+                                                           placeholder="Quantite"
+                                                    [(ngModel)]="selectedPlanningRepas.quantite" [ngClass]="{'ng-invalid ng-dirty' : !validPlanningRepasQuantite}"  >
+                                            </p-inputNumber>
+                                            <small class='p-error' *ngIf='!validPlanningRepasQuantite'>Quantite est obligatoire.</small>
+                                        </div>
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="5">Description</label>
+                                            <textarea id="5" pInputTextarea rows="5" cols="30"
+                                                      placeholder="Description"  [(ngModel)]="selectedPlanningRepas.description"
+                                                     ></textarea>
+                                            
+                                        </div>
+
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-grid">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times"
+                                    class="p-button-text" (click)="hideEditDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="edit()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+                    <app-planning-create-admin></app-planning-create-admin>
+                    <app-repas-create-admin></app-repas-create-admin>
+                    <app-type-repas-create-admin></app-type-repas-create-admin>
+
+
+    </p-dialog>

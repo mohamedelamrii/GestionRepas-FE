@@ -1,0 +1,1 @@
+{"ast":null,"code":"//import {CategoriePatientDto} from './CategoriePatient.model';\n//import {PlanningRepasDto} from './PlanningRepas.model';\n//import {JourDto} from './Jour.model';\nimport { BaseCriteria } from './BaseCriteria.model';\nexport class PlanningCriteria extends BaseCriteria {}","map":null,"metadata":{},"sourceType":"module"}

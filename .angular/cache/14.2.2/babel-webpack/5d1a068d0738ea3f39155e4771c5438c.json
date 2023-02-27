@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { BaseCriteria } from './BaseCriteria.model';\nexport class JourCriteria extends BaseCriteria {}","map":null,"metadata":{},"sourceType":"module"}

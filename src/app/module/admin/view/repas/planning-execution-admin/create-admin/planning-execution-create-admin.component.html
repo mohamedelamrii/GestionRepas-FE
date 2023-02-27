@@ -1,0 +1,75 @@
+        <p-dialog [(visible)]="createPlanningExecutionDialog" [style]="{width: '70vw'}"
+                header="Planning execution" [modal]="true"
+                styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+
+
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="Planning execution">
+                        <div class="p-grid">
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="1">Date planning execution<span style="color: red;">*</span></label>
+                                            <p-calendar id="1"  [showTime]="true" [showSeconds]="false"
+                                                        placeholder="Date planning execution"  [(ngModel)]="selectedPlanningExecution.datePlanningExecution"
+                                                    dateFormat="{{dateFormat}}" [ngClass]="{'ng-invalid ng-dirty' : !validPlanningExecutionDatePlanningExecution}"  >
+                                            </p-calendar>
+                                            <small class='p-error' *ngIf='!validPlanningExecutionDatePlanningExecution'>DatePlanningExecution est obligatoire.</small>
+                                        </div>
+
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="2">Quantite execution<span style="color: red;">*</span></label>
+                                            <p-inputNumber class="p-mb-2 p-mr-2" id="2"
+                                                           placeholder="Quantite execution"
+                                                    [(ngModel)]="selectedPlanningExecution.quantiteExecution" [ngClass]="{'ng-invalid ng-dirty' : !validPlanningExecutionQuantiteExecution}"  >
+                                            </p-inputNumber>
+                                            <small class='p-error' *ngIf='!validPlanningExecutionQuantiteExecution'>QuantiteExecution est obligatoire.</small>
+                                        </div>
+
+                                        <div class="p-field p-col-11 p-md-5">
+                                            <label for="3">Planning repas</label>
+                                            <p-dropdown [options]="planningRepass" [(ngModel)]="selectedPlanningExecution.planningRepas"
+                                                    id="3" [filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true"
+                                                    optionLabel="id"
+                                                    placeholder="Planning repas"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="p-col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button"
+                                                    icon="pi pi-plus"   (click)="openCreatePlanningRepas('planningRepas')"
+                                                    class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                                        <div class="p-field p-col-12 p-md-6">
+                                            <label for="4">Commentaire</label>
+                                            <textarea id="4" pInputTextarea rows="5" cols="30"
+                                                      placeholder="Commentaire"  [(ngModel)]="selectedPlanningExecution.commentaire"
+                                             ></textarea>
+                                            
+                                        </div>
+
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-grid">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times"
+                                    class="p-button-text" (click)="hideCreateDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <app-planning-repas-create-admin></app-planning-repas-create-admin>
+
+
+    </p-dialog>

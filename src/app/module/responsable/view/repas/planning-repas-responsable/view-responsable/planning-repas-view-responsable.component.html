@@ -1,0 +1,78 @@
+
+<p-dialog [(visible)]="viewPlanningRepasDialog" [style]="{width: '70vw'}"
+        header="" [modal]="true"
+        styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="p-grid">
+
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="1">Planning</label>
+                                    <p-dropdown [options]="plannings" [(ngModel)]="selectedPlanningRepas.planning"
+                                            id="1" [filter]="true" filterMatchMode="contains"
+                                            [showClear]="true" [disabled]="true"
+                                            optionLabel="id"
+                                            placeholder="Planning">
+                                    </p-dropdown>
+                                </div>
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="2">Repas</label>
+                                    <p-dropdown [options]="repass" [(ngModel)]="selectedPlanningRepas.repas"
+                                            id="2" [filter]="true" filterMatchMode="contains"
+                                            [showClear]="true" [disabled]="true"
+                                            optionLabel="libelle"
+                                            placeholder="Repas">
+                                    </p-dropdown>
+                                </div>
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="3">Type repas</label>
+                                    <p-dropdown [options]="typeRepass" [(ngModel)]="selectedPlanningRepas.typeRepas"
+                                            id="3" [filter]="true" filterMatchMode="contains"
+                                            [showClear]="true" [disabled]="true"
+                                            optionLabel="libelle"
+                                            placeholder="Type repas">
+                                    </p-dropdown>
+                                </div>
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="4">Quantite</label>
+                                    <p-inputNumber class="p-mb-2 p-mr-2" id="4" [disabled]="true"
+                                                   placeholder="Quantite"  [(ngModel)]="selectedPlanningRepas.quantite"
+                                            [(ngModel)]="selectedPlanningRepas.quantite"></p-inputNumber>
+                                </div>
+
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="5">Description</label>
+                                    <textarea id="5" pInputTextarea rows="5" cols="30" [disabled]="true"
+                                              placeholder="Description"  [(ngModel)]="selectedPlanningRepas.description"
+                                    ></textarea>
+                                </div>
+
+                </div>
+            </p-tabPanel>
+
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="p-grid">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times"
+                        class="p-button-text" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+
+            <app-planning-create-responsable></app-planning-create-responsable>
+            <app-repas-create-responsable></app-repas-create-responsable>
+            <app-type-repas-create-responsable></app-type-repas-create-responsable>
+
+
+
+</p-dialog>
+
+
+

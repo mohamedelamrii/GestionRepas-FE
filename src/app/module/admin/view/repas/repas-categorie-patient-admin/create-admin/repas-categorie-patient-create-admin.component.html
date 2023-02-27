@@ -1,0 +1,66 @@
+        <p-dialog [(visible)]="createRepasCategoriePatientDialog" [style]="{width: '70vw'}"
+                header="Repas categorie patient" [modal]="true"
+                styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+
+
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="Repas categorie patient">
+                        <div class="p-grid">
+
+                                        <div class="p-field p-col-11 p-md-5">
+                                            <label for="1">Repas</label>
+                                            <p-dropdown [options]="repass" [(ngModel)]="selectedRepasCategoriePatient.repas"
+                                                    id="1" [filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true"
+                                                    optionLabel="libelle"
+                                                    placeholder="Repas"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="p-col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button"
+                                                    icon="pi pi-plus"   (click)="openCreateRepas('repas')"
+                                                    class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                                        <div class="p-field p-col-11 p-md-5">
+                                            <label for="2">Categorie patient</label>
+                                            <p-dropdown [options]="categoriePatients" [(ngModel)]="selectedRepasCategoriePatient.categoriePatient"
+                                                    id="2" [filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true"
+                                                    optionLabel="libelle"
+                                                    placeholder="Categorie patient"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="p-col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button"
+                                                    icon="pi pi-plus"   (click)="openCreateCategoriePatient('categoriePatient')"
+                                                    class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-grid">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times"
+                                    class="p-button-text" (click)="hideCreateDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+            <app-repas-create-admin></app-repas-create-admin>
+            <app-categorie-patient-create-admin></app-categorie-patient-create-admin>
+
+
+    </p-dialog>

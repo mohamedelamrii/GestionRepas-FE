@@ -1,0 +1,82 @@
+{
+    new : 'Nouveau',
+    search: 'Chercher',
+    export: 'Exporter',
+    validate: 'Valider',
+    from-to: 'Les éléments de {first} à {last} sur {totalRecords}',
+    search: 'Chercher...',
+
+
+    Responsable planning: 'Responsable planning',
+    Liste des responsable plannings: 'Liste des responsable plannings',
+    Nom: 'Nom',
+    Prenom: 'Prenom',
+    Cin: 'Cin',
+    Code: 'Code',
+    Email: 'Email',
+    Adresse: 'Adresse',
+
+    Repas categorie patient: 'Repas categorie patient',
+    Liste des repas categorie patients: 'Liste des repas categorie patients',
+    Repas: 'Repas',
+    Categorie patient: 'Categorie patient',
+
+    Planning repas: 'Planning repas',
+    Liste des planning repas: 'Liste des planning repas',
+    Planning: 'Planning',
+    Repas: 'Repas',
+    Type repas: 'Type repas',
+    Quantite: 'Quantite',
+    Description: 'Description',
+
+    Repas: 'Repas',
+    Liste des repas: 'Liste des repas',
+    Libelle: 'Libelle',
+    Type repas: 'Type repas',
+    Image: 'Image',
+    Description: 'Description',
+    Repas categorie patients: 'Repas categorie patients',
+
+    Type repas: 'Type repas',
+    Liste des type repas: 'Liste des type repas',
+    Libelle: 'Libelle',
+    Code: 'Code',
+
+    Jour: 'Jour',
+    Liste des jours: 'Liste des jours',
+    Libelle: 'Libelle',
+    Code: 'Code',
+
+    Patient: 'Patient',
+    Liste des patients: 'Liste des patients',
+    Ipp: 'Ipp',
+    Nom: 'Nom',
+    Prenom: 'Prenom',
+    Cin: 'Cin',
+    Code ramed: 'Code ramed',
+
+    Planning execution: 'Planning execution',
+    Liste des planning executions: 'Liste des planning executions',
+    Date planning execution: 'Date planning execution',
+    Quantite execution: 'Quantite execution',
+    Planning repas: 'Planning repas',
+    Commentaire: 'Commentaire',
+
+    Planning: 'Planning',
+    Liste des plannings: 'Liste des plannings',
+    Date debut: 'Date debut',
+    Date fin: 'Date fin',
+    Categorie patient: 'Categorie patient',
+    Jour: 'Jour',
+    Planning repass: 'Planning repass',
+    Planning repass: 'Planning repass',
+
+    Categorie patient: 'Categorie patient',
+    Liste des categorie patients: 'Liste des categorie patients',
+    Libelle: 'Libelle',
+    Code: 'Code',
+    Nombre patient total: 'Nombre patient total',
+    Description: 'Description',
+}
+
+

@@ -1,0 +1,103 @@
+
+<p-dialog [(visible)]="viewPlanningDialog" [style]="{width: '70vw'}"
+        header="" [modal]="true"
+        styleClass="p-fluid">
+
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="p-grid">
+
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="1">Date debut</label>
+                                    <p-calendar id="1" [disabled]="true"  [showTime]="true" [showSeconds]="false"
+                                                placeholder="Date debut"  [(ngModel)]="selectedPlanning.dateDebut"
+                                            dateFormat="{{dateFormat}}"></p-calendar>
+                                </div>
+
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="2">Date fin</label>
+                                    <p-calendar id="2" [disabled]="true"  [showTime]="true" [showSeconds]="false"
+                                                placeholder="Date fin"  [(ngModel)]="selectedPlanning.dateFin"
+                                            dateFormat="{{dateFormat}}"></p-calendar>
+                                </div>
+
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="3">Categorie patient</label>
+                                    <p-dropdown [options]="categoriePatients" [(ngModel)]="selectedPlanning.categoriePatient"
+                                            id="3" [filter]="true" filterMatchMode="contains"
+                                            [showClear]="true" [disabled]="true"
+                                            optionLabel="libelle"
+                                            placeholder="Categorie patient">
+                                    </p-dropdown>
+                                </div>
+                                <div class="p-field p-col-12 p-md-6">
+                                    <label for="4">Jour</label>
+                                    <p-dropdown [options]="jours" [(ngModel)]="selectedPlanning.jour"
+                                            id="4" [filter]="true" filterMatchMode="contains"
+                                            [showClear]="true" [disabled]="true"
+                                            optionLabel="libelle"
+                                            placeholder="Jour">
+                                    </p-dropdown>
+                                </div>
+                </div>
+            </p-tabPanel>
+
+                    <p-tabPanel header="Planning repass">
+                        <div class="p-grid">
+
+                            <div class="p-col">
+                                <div class="card">
+                                    <p-table [value]="selectedPlanning.planningRepass" [scrollable]="true"
+                                            scrollHeight="200px">
+                                        <ng-template pTemplate="header">
+                                            <tr>
+                                                            <th>Repas</th>
+                                                            <th>Type repas</th>
+                                                            <th>Quantite</th>
+                                                            <th>Description</th>
+                                            </tr>
+                                        </ng-template>
+                                        <ng-template pTemplate="body" let-p>
+                                            <tr>
+                                                        <td>{{p.repas?.libelle}}</td>
+                                                        <td>{{p.typeRepas?.libelle}}</td>
+                                                            <td>{{p.quantite}}</td>
+
+                                                            <td>{{p.description}}</td>
+
+
+                                            </tr>
+                                        </ng-template>
+                                    </p-table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </p-tabPanel>
+
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="p-grid">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times"
+                        class="p-button-text" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+
+            <app-categorie-patient-create-admin></app-categorie-patient-create-admin>
+            <app-jour-create-admin></app-jour-create-admin>
+
+                    <app-repas-create-admin></app-repas-create-admin>
+                    <app-type-repas-create-admin></app-type-repas-create-admin>
+
+
+</p-dialog>
+
+
+
