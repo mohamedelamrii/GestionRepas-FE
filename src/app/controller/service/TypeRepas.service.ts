@@ -35,6 +35,7 @@ export class TypeRepasService {
 
 
     public findPaginatedByCriteria(criteria: TypeRepasCriteria): Observable<PaginatedList<TypeRepasDto>>{
+        //debugger
         console.log('haaa  liennn :::: ' + this.API + 'find-paginated-by-criteria');
         console.log('o criteria '+ criteria);
         return this.http.post<PaginatedList<TypeRepasDto>>(this.API + 'find-paginated-by-criteria', criteria);
